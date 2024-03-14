@@ -1,0 +1,51 @@
+   <div id="edit" *ngIf="recipe">
+    
+   
+    <div>
+      <label for="name">Name:</label>
+      <input type="text" id="name" [(ngModel)]="recipe.name">
+    </div>
+    <div>
+      <label for="categoryId">Category ID:</label>
+      <input type="number" id="categoryId" [(ngModel)]="recipe.categoryId">
+    </div>
+    <div>
+      <label for="preparationTime">Preparation Time:</label>
+      <input type="number" id="preparationTime" [(ngModel)]="recipe.preparationTime">
+    </div>
+    
+    <div>
+        <label for="difficulty">Difficulty:</label>
+        <input type="number" id="difficulty" name="difficulty" [(ngModel)]="recipe.difficulty" min="1" max="5">
+        <div *ngIf="recipe.difficulty !== null && (recipe.difficulty < 1 || recipe.difficulty > 5)">
+          <div>
+            Difficulty must be between 1 and 5.
+          </div>
+        </div>
+    </div>
+     <div>
+    <div class="form-group">
+      <label for="ingredients">Ingredients:</label>
+      <div *ngFor="let ingredient of recipe.ingredients; let i = index">
+        <input type="text" id="ingredient{{i}}" [(ngModel)]="recipe.ingredients[i]">
+      </div>
+      <button type="button" class="btn btn-primary mt-2" (click)="addIngredient()">Add Ingredient</button>
+    </div>
+    
+    <div class="form-group">
+      <label for="instructions">Instructions:</label>
+      <div *ngFor="let instruction of recipe.instructions; let i = index">
+        <input type="text" id="instruction{{i}}" [(ngModel)]="recipe.instructions[i]">
+      </div>
+      <button type="button" class="btn btn-primary mt-2" (click)="addInstruction()">Add Instruction</button>
+    </div>
+    
+    <div>
+      <label for="image">Image URL:</label>
+      <input type="text" id="image" [(ngModel)]="recipe.image">
+    </div>
+    <button (click)="saveChanges()" [disabled]="recipe.difficulty !== null && (recipe.difficulty < 1 || recipe.difficulty > 5)">
+        Save Changes
+      </button>    <button (click)="cancel()">Cancel</button>
+  </div>
+  

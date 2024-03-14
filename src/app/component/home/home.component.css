@@ -1,0 +1,13 @@
+/* home.component.css */
+.background-container {
+    width: 1750px;
+    aspect-ratio: auto 1171 / 658;
+    height: 658px;
+    background-image: url('https://www.10bis.co.il/Areas/G12/Content/Images/HomePage/HomePage_MainImage.jpg');
+    background-size: cover;
+    
+  }
+  
+
+  
+  

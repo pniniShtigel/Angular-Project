@@ -1,0 +1,55 @@
+
+/* סגנון ה-Navbar */
+body{
+  background-color: black;
+}
+.navbar {
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: black;
+    color: white;
+    z-index: 1000; /* כדי להבטיח שהוא יהיה מעל כל האלמנטים האחרים */
+    padding: 10px; /* יכול להיות שיעלה רצון להוסיף רווחים כדי להפריד את הקישורים */
+  }
+  
+  /* סגנון לקומפוננטות אחרות */
+  .other-components {
+    position: relative; /* מציין כי הם משתמשים בזרם התיקול (normal flow) */
+   /* מציין כי רצוי שיהיו מתחת ל-Navbar */
+  }
+  
+  /* עיצוב יתר של התכנים בתוך ה-Navbar */
+  .navbar-container {
+    display: flex;
+    justify-content: center;
+  }
+    
+  .nav-link {
+    text-decoration: none;
+    color: white;
+    margin: 0 15px; /* רווח בין הקישורים */
+  }
+  
+  /* עיצוב יתר של קומפוננטות אחרות */
+  /* ... */
+  
+  /* סגנון לקישורים */
+  .links-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(255, 255, 255, 0.7); /* רקע שקוף להבלטת הטקסט */
+    padding: 20px;
+    border-radius: 10px; /* כדי לעגל את הקצוות */
+  }
+  
+  /* סגנון לקישורים יחידים */
+  .link {
+    text-decoration: none;
+    color: black;
+    font-size: 20px;
+    margin: 10px;
+  }
+  

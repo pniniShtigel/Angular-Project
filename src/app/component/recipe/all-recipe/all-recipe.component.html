@@ -1,0 +1,18 @@
+<!-- תיבת בחירה למשתמש -->
+<select [(ngModel)]="selectedCategory">
+  <option value="all">🍔 all</option>
+  <option *ngFor="let category of categories" [value]="category.code">{{category.icon}}  {{ category.name }}</option>
+</select>
+
+<select [(ngModel)]="selectedTime">
+  <option value="all"> ⏳ all</option>
+  <option value="0-15"> ⏳ Up to 15 minutes</option>
+  <option value="15-30">⏳ 15 to 30 minutes</option>
+  <option value="30-60">⏳ 30 to 60 minutes</option>
+  <option value="60+">⏳ Over 60 minutes</option>
+</select>
+<div class="recipes-container">
+  
+  <!-- תצוגת המתכונים על פי בחירת המשתמש -->
+  <app-small-recipe *ngFor="let recipe of filteredRecipes" [recipe]="recipe"></app-small-recipe>
+</div>

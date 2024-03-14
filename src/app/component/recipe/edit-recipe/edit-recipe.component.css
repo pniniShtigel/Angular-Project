@@ -1,0 +1,64 @@
+.container {
+    width: 30%;
+    margin: 50px auto;
+    padding: 20px;
+    border: 2px solid #f39c12;
+    border-radius: 10px;
+    color: white;
+  }
+  #edit{
+    width: 30%;
+    margin: 50px auto;
+    padding: 20px;
+    border: 2px solid #f39c12;
+    border-radius: 10px;
+    color: white;
+  }
+  h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: white;
+  }
+  
+  .form-group {
+    margin-bottom: 10px;
+  }
+  
+  label {
+    font-weight: bold;
+    color: white;
+  }
+  
+  input[type="text"],
+  input[type="number"] {
+    width: 100%;
+    border: 1px solid #f39c12;
+    color: white;
+    padding: 6px;
+    border-radius: 5px;
+    background-color: #050505;
+    margin: 5px;
+
+  }
+  
+  
+  
+  .list-group {
+    margin-top: 10px;
+  }
+  
+  .list-group-item {
+    border: none;
+    background-color: transparent;
+  }
+  button {
+    margin-top: 10px;
+    padding: 10px 20px;
+    border: none;
+    padding: 5px;
+    border-radius: 5px;
+    background-color: #f39c12;
+    color: white;
+    margin: 5px;
+    cursor: pointer;
+  }

@@ -1,0 +1,59 @@
+<div class="container">
+  <h2>Add New Recipe</h2>
+  <form (ngSubmit)="saveRecipe()">
+    <div class="form-group">
+      <label for="recipeName">Recipe Name</label>
+      <input type="text" class="form-control" id="recipeName" [(ngModel)]="recipe.name" name="recipeName" required>
+    </div>
+
+    <div class="form-group">
+      <label for="recipeCategory">Category</label>
+      <select class="form-control" id="recipeCategory" [(ngModel)]="recipe.categoryId" name="recipeCategory" required>
+        <option *ngFor="let category of categories" [value]="category.code">{{ category.name }}</option>
+      </select>
+    </div>
+
+    <div class="form-group">
+      <label for="preparationTime">Preparation Time (in minutes)</label>
+      <input type="number" class="form-control" id="preparationTime" [(ngModel)]="recipe.preparationTime" name="preparationTime" required>
+    </div>
+
+    <div class="form-group">
+      <label for="difficulty">Difficulty</label>
+      <select class="form-control" id="difficulty" [(ngModel)]="recipe.difficulty" name="difficulty" required>
+        <option value="1">Very Easy</option>
+        <option value="2">Easy</option>
+        <option value="3">Medium</option>
+        <option value="4">Hard</option>
+        <option value="5">Very Hard</option>
+      </select>
+    </div>
+
+   
+
+    <div class="form-group">
+      <label for="recipeImage">Image URL</label>
+      <input type="text" class="form-control" id="recipeImage" [(ngModel)]="recipe.image" name="recipeImage">
+    </div>
+
+    <div class="form-group">
+      <label for="ingredientInput">Ingredients</label>
+      <input type="text" class="form-control" id="ingredientInput" [(ngModel)]="ingredientInput" name="ingredientInput">
+      <button type="button" class="btn btn-primary mt-2" (click)="addIngredient()">Add Ingredient</button>
+      <ul class="list-group mt-2">
+        <li class="list-group-item" *ngFor="let ingredient of recipe.ingredients">{{ ingredient }}</li>
+      </ul>
+    </div>
+    
+    <div class="form-group">
+      <label for="instructionInput">Instructions</label>
+      <input type="text" class="form-control" id="instructionInput" [(ngModel)]="instructionInput" name="instructionInput">
+      <button type="button" class="btn btn-primary mt-2" (click)="addInstruction()">Add Instruction</button>
+      <ol class="list-group mt-2">
+        <li class="list-group-item" *ngFor="let instruction of recipe.instructions">{{ instruction }}</li>
+      </ol>
+    </div>
+    
+    <button type="submit" class="btn btn-primary">Save</button>
+  </form>
+</div>

@@ -1,0 +1,34 @@
+<div class="container">
+  <h2>Register</h2>
+  <form (ngSubmit)="register()" #registerForm="ngForm">
+    <div class="form-group">
+      <label for="username">Username</label>
+      <input type="text" class="form-control" id="username" [(ngModel)]="user.name" name="username" required minlength="3" maxlength="20">
+      <div class="text-danger" *ngIf="registerForm.controls['username'].errors?.['required']">Username is required.</div>
+      <div class="text-danger" *ngIf="registerForm.controls['username'].errors?.['minlength']">Username must be at least 3 characters.</div>
+      <div class="text-danger" *ngIf="registerForm.controls['username'].errors?.['maxlength']">Username cannot exceed 20 characters.</div>
+    </div>
+    <div class="form-group">
+      <label for="address">Adress</label>
+      <input type="text" class="form-control" id="address" [(ngModel)]="user.adress" name="address" required>
+      <div class="text-danger" *ngIf="registerForm.controls['address'].errors?.['required']">Address is required.</div>
+    </div>
+    <div class="form-group">
+      <label for="email">Email</label>
+      <input type="email" class="form-control" id="email" [(ngModel)]="user.email" name="email" required email>
+      <div class="text-danger" *ngIf="registerForm.controls['email'].errors?.['required']">Email is required.</div>
+      <div class="text-danger" *ngIf="registerForm.controls['email'].errors?.['email']">Invalid email format.</div>
+      <div class="text-danger" *ngIf="registrationError.includes('Email already exists')">This email is already registered.</div>
+    </div>
+    <div class="form-group">
+      <label for="password">Password</label>
+      <input type="password" class="form-control" id="password" [(ngModel)]="user.password" name="password" required minlength="6" maxlength="20">
+      <div class="text-danger" *ngIf="registerForm.controls['password'].errors?.['required']">Password is required.</div>
+      <div class="text-danger" *ngIf="registerForm.controls['password'].errors?.['minlength']">Password must be at least 6 characters.</div>
+      <div class="text-danger" *ngIf="registerForm.controls['password'].errors?.['maxlength']">Password cannot exceed 20 characters.</div>
+    </div>
+
+    <button type="submit" class="btn btn-primary" [disabled]="registerForm.invalid">Register</button>
+    <div class="text-danger mt-3" *ngIf="registrationError">{{ registrationError }}</div>
+  </form>
+</div>
